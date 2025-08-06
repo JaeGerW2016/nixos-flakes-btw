@@ -15,7 +15,7 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "nixos-jgw-desktop"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -32,7 +32,7 @@
   time.timeZone = "Asia/Shanghai";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "zh_CN.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "zh_CN.UTF-8";
@@ -50,12 +50,19 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.desktopManager.gnome.extraGSettingsOverrides = ''
-  [org.gnome.shell]
-  enabled-extensions=['dash-to-dock@micxgx.gmail.com']
-  '';
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.desktopManager.gnome.extraGSettingsOverrides = ''
+  # [org.gnome.shell]
+  # enabled-extensions=['dash-to-dock@micxgx.gmail.com']
+  # '';
+
+
+  # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+
+
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -86,9 +93,9 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.jgw = {
+  users.users.Joe = {
     isNormalUser = true;
-    description = "jgw";
+    description = "Joe";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
@@ -97,7 +104,7 @@
   };
 
   security.sudo.extraConfig = ''
-    jgw ALL=(ALL) NOPASSWD: ALL
+    Joe ALL=(ALL) NOPASSWD: ALL
   '';
 
   # Install firefox.
@@ -119,7 +126,6 @@
   noto-fonts
   noto-fonts-cjk-sans
   noto-fonts-emoji
-  gnomeExtensions.dash-to-dock
   gedit
   alacritty
   bat
