@@ -13,7 +13,7 @@
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
-            home-manager.users.jgw = import ./home.nix;
+            home-manager.users.Joe = import ./home.nix;
           }
         ];
       };

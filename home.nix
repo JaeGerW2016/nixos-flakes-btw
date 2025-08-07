@@ -5,31 +5,26 @@
   home.homeDirectory = "/home/Joe";
   home.stateVersion = "25.05";
 
-  programs.bash = {
+  # Install zsh
+  programs.zsh = {
     enable = true;
-    shellAliases = {
-      ll = "ls -la";
-      btw = "echo i use nixos btw";
-      nrs = "sudo nixos-rebuild switch";
-    };
 
-    initExtra = ''
-      export PS1='[ \u@\h: \w ]\\$'
-    '';
-  };
-  
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      window.opacity = 0.9;
-      font.normal = {
-        family = "JetBrains Mono";
-        style = "Regular";
-      };
-      font.size = 16;
-    };
-  };
+    plugins = [
+      {
+        name = "zsh-autosuggestions";
+        src = pkgs.zsh-autosuggestions;
+      }
+  ];
 
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "z" "sudo" ];
+      theme = "powerlevel10k/powerlevel10k";
+      extraConfig = ''
+        source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+      '';
+    };
+    };
 
   home.packages = with pkgs; [
     bat

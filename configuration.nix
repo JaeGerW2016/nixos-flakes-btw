@@ -92,10 +92,13 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  users.defaultUserShell=pkgs.zsh; 
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.Joe = {
     isNormalUser = true;
     description = "Joe";
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
@@ -109,6 +112,9 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+  
+  # Install zsh
+  programs.zsh.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -135,6 +141,8 @@
   bat
   git
   wechat
+  neofetch
+  oh-my-zsh
   ];
 
   fonts = {
