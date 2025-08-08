@@ -33,7 +33,9 @@ nixos-flakes-btw 是一个基于 Nix Flakes 的 NixOS 配置仓库模板。它�
 1. 克隆仓库
 git clone https://github.com/JaeGerW2016/nixos-flakes-btw.git
 cd nixos-flakes-btw
-### 2. 编辑主机配置
+```
+### 2.编辑主机配置
+```
 根据你的主机，编辑 hosts/ 目录下的配置文件，或新建一个：
 
 # hosts/myhost.nix
@@ -48,7 +50,7 @@ cd nixos-flakes-btw
   # 其他配置...
 }
 ```
-##3. 构建和切换配置
+### 3. 构建和切换配置
 ```
 假设你的主机配置名为 myhost，运行：
 
