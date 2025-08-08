@@ -40,7 +40,7 @@ cd nixos-flakes-btw
 { config, pkgs, ... }:
 {
   imports = [
-    ../home.nix 
+    ../flake.nix 
     # 其他模块
   ];
 
