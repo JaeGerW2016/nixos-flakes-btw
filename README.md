@@ -6,9 +6,13 @@ nixos-flakes-btw 是一个基于 Nix Flakes 的 NixOS 配置仓库模板。它�
 
 ### 特性
 🧩 模块化配置：将配置拆分为多个模块，便于维护和复用
+
 🖥️ 多主机支持：轻松为不同主机编写独立配置
+
 🧑‍💻 开发者友好：内置常用开发环境和工具
+
 🚀 快速部署：一条命令即可部署和切换配置
+
 🧬 Flakes 支持：利用 Nix Flakes 的强大功能，提升配置可移植性和可复现性
 
 ### 目录结构
@@ -64,6 +68,7 @@ nix flake update
 ```
 ### 参考资料
 [NixOS Wiki: Flakes](https://nixos.wiki/wiki/Flakes)
+
 [NixOS 官方文档](https://nixos.org/manual/nixos/stable/)
 
 ### 贡献
