@@ -110,6 +110,13 @@
     Joe ALL=(ALL) NOPASSWD: ALL
   '';
 
+  environment.sessionVariables = {
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
+  };
+
+
   # Install firefox.
   programs.firefox.enable = true;
   
