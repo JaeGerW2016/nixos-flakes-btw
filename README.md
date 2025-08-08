@@ -49,9 +49,12 @@ cd nixos-flakes-btw
 }
 ```
 ##3. 构建和切换配置
+```
 假设你的主机配置名为 myhost，运行：
 
 sudo nixos-rebuild switch --flake .#myhost
+```
+
 ### 4. 更新 Flake 输入
 ```
 nix flake update
